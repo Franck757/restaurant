@@ -1,6 +1,6 @@
 <?php
 
-class NewUserController
+class NewuserController
 {
 
   public function httpGetMethod(Http $http, array $queryFields)
@@ -10,19 +10,16 @@ class NewUserController
     ];
   }
 
-
-
+  public function httpPostMethod(Http $http, array $formFields)
+  {
+    if (empty($_POST)) {
+      header("Location: newuser");
+    } else {
+      $userModel = new NewuserModel;
+      $err = $userModel->createUser($formFields);
+      header("Location: http://localhost/restaurant/index.php"); //Redirection HTTP
+    }
+  }
 }
-/*
-if (empty($_POST)) {
-$template = "../templates/userForm.phtml";
-include "../templates/base.phtml";
-} else {
-$db = openDatabase('blog','root','troiswa');
-$db->query('SET NAMES UTF8');
-$err = newUSer($db, $_POST);
-$id = $db->lastInsertId();
-header("Location: http://localhost/blog/src/user.php?id=$id"); // Redirection HTTP
-}*/
 
 ?>

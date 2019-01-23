@@ -35,15 +35,20 @@
 <!-- Interface utilisateur -->
 <nav class="user-interface">
     <ul class="link-list">
-      <a href="../index.php/newuser">Inscription</a>
-      <a href="../index.php/login">Connexion</a>
-        <!-- Code HTML/PHP à écrire -->
+      <a href="<?= $requestUrl ?>/newuser" class="button">Inscription</a>
+      <a href="<?= $requestUrl ?>/login" class="button">Connexion</a>
+
     </ul>
 </nav>
+<div class="menu">
+  <a href="<?= $requestUrl ?>/listeplats?categorie=entree" class="button">Entrées</a>
+  <a href="<?= $requestUrl ?>/listeplats?categorie=plats" class="button">Plats</a>
+  <a href="<?= $requestUrl ?>/listeplats?categorie=dessert" class="button">Desserts</a>
+</div>
 
 <main>
+  <?php include $this->viewData['template'] ?>
     <!-- Affichage du template lié à la vue -->
-    <?php include $this->viewData['template'] ?>
 </main>
 
 <!-- Pied de page commun -->

@@ -131,11 +131,14 @@ html
 
     /* presentation */
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
 }
 .link-list li
 {
     display: inline-block;
 }
+
 
 .small
 {
@@ -280,4 +283,9 @@ input {
 {
   display: flex;
   flex-direction: column;
+}
+.menu {
+  display: flex;
+ justify-content: space-around;
+ margin-top: 15px;
 }
