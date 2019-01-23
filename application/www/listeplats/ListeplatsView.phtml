@@ -1,0 +1,17 @@
+<?php
+var_dump($plat);
+?>
+<h2>Liste des entrées</h2>
+
+<article class="">
+
+  <?php foreach($plat as $p): ?>
+
+  <p><span  class="">entrée : </span><em><?= $p['nom'] ?></em></p>
+  <p><span  class="">Contenue : </span><em><?= $p['description'] ?></em></p>
+  <p><span  class="">Prix : </span><em><?= $p['prix'] ?></em></p>
+  <p><img  class="" src="../www/images/meals/<?= $p['photo'] ?>" alt="<?= $p['nom'] ?>" /></p>
+
+<?php endforeach; ?>
+
+</article>
