@@ -13,11 +13,11 @@ class NewuserController
   public function httpPostMethod(Http $http, array $formFields)
   {
     if (empty($_POST)) {
-      header("Location: newuser");
+      header("Location: http://localhost/Restaurant/index.php/newuser");
     } else {
       $userModel = new NewuserModel;
       $err = $userModel->createUser($formFields);
-      header("Location: http://localhost/restaurant/index.php"); //Redirection HTTP
+      header("Location: http://localhost/Restaurant/index.php/user?id=$err"); //Redirection HTTP
     }
   }
 }

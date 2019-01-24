@@ -15,7 +15,7 @@ class NewuserModel
         'tel'        => $data['tel'],
         'pseudo'     => $data["pseudo"],
         'mail'       => $data["email"],
-        'password'   => /*password_hash*/($data["password"]),
+        'password'   => password_hash($data["password"], PASSWORD_DEFAULT),
         'adresse'    => $data['adresse'],
       ]);
 

@@ -11,15 +11,13 @@ class UserSession
     }
   }
 
-  public function create($userId, $firstName, $lastName, $email)
+  public function create($userId, $email)
   {
     // Construction de la session utilisateur.
     $_SESSION['user'] =
     [
-      'UserId'    => $userId,
-      'FirstName' => $firstName,
-      'LastName'  => $lastName,
-      'Email'     => $email
+      'userId'    => $userId,
+      'email'     => $email
     ];
   }
 
