@@ -14,18 +14,18 @@ class LoginController
 
     $isPasswordCorrect = password_verify($formFields['password'],substr($login['password'],0,60));
 
-      if(!$login){
-        echo 'Mauvais identifiant';
+    if(!$login){
+      echo 'Mauvais identifiant';
+    }else{
+      if($isPasswordCorrect){
+        $session = new UserSession();
+        $connected = $session->create($login['id'], $login['pseudo']);
+        echo 'Vous êtes connecté ' . $login['pseudo'];
       }else{
-        if($isPasswordCorrect){
-          $session = new UserSession();
-          $connected = $session->create($login['id'], $login['pseudo']);
-          echo 'Vous êtes connecté ' . $login['pseudo'];
-        }else{
         echo 'Mauvais identifiant ou mot de passe!';
-        }
       }
+    }
 
 
-}
+  }
 }

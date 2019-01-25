@@ -101,7 +101,7 @@ class FrontController
 
             unset($this->viewData['variables']['_form']);
         }
-
+        $this->viewData['variables']['_flashMessages'] = (new FlashBag())->fetchMessages();
         // Inject the view template variables.
         extract($this->viewData['variables'], EXTR_OVERWRITE);
 
